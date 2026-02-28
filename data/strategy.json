@@ -1,0 +1,10 @@
+{
+  "risk_tolerance": "moderate",
+  "max_allocation_pct": 30,
+  "min_score_invest": 7.5,
+  "min_score_conditional": 6,
+  "category_max_exposure_pct": 40,
+  "aggressiveness": 0.5,
+  "cycle_count": 6,
+  "last_adjusted": "2026-02-28T20:50:13.252Z"
+}

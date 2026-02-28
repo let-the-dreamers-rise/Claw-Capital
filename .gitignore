@@ -1,0 +1,20 @@
+# Dependencies
+node_modules/
+
+# Environment variables (API keys!)
+.env
+
+# Credentials
+moltbook_credentials.json
+moltbook_response.json
+
+# OpenClaw local config
+.openclaw/
+
+# Temp files
+register_moltbook.mjs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db

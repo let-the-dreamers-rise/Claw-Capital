@@ -1,0 +1,88 @@
+{
+  "investments": [
+    {
+      "id": "INV-1772139805738",
+      "project_name": "SolanaGuard AI",
+      "category": "DeFi Security",
+      "description": "Autonomous smart contract auditing agent that scans Solana programs for vulnerabilities in real-time. Uses multi-model AI consensus for accuracy. Revenue through per-audit subscriptions. SURGE token r",
+      "overall_score": 7.43,
+      "allocation_percentage": 8,
+      "amount": 80,
+      "scores": {
+        "autonomy": 10,
+        "revenue": 10,
+        "token_utility": 7.7,
+        "moat": 6.1,
+        "ecosystem": 10,
+        "execution": 7.5,
+        "risk": 3.9
+      },
+      "investment_decision": "conditional_invest",
+      "timestamp": "2026-02-26T21:03:25.738Z",
+      "status": "active"
+    },
+    {
+      "id": "INV-1772139843101",
+      "project_name": "NarrativeEngine",
+      "category": "Content Generation",
+      "description": "AI agent that autonomously generates, publishes, and monetizes long-form content across platforms. Uses multi-model orchestration for research, writing, and distribution. Revenue from ad revenue shari",
+      "overall_score": 6.86,
+      "allocation_percentage": 8,
+      "amount": 73.6,
+      "scores": {
+        "autonomy": 9.7,
+        "revenue": 9.1,
+        "token_utility": 7.4,
+        "moat": 5.7,
+        "ecosystem": 7.6,
+        "execution": 7.2,
+        "risk": 3.4
+      },
+      "investment_decision": "conditional_invest",
+      "timestamp": "2026-02-26T21:04:03.101Z",
+      "status": "active"
+    },
+    {
+      "id": "INV-1772310751221",
+      "project_name": "NeuroSwap",
+      "category": "DeFi Security",
+      "description": "Autonomous neural network optimizer for DeFi yield strategies. Self-learns market patterns, executes trades without human intervention. Revenue from performance fees. SURGE token staking for priority ",
+      "overall_score": 7.3,
+      "allocation_percentage": 9,
+      "amount": 76.18,
+      "scores": {
+        "autonomy": 9.9,
+        "revenue": 10,
+        "token_utility": 7.7,
+        "moat": 6.3,
+        "ecosystem": 8,
+        "execution": 7.2,
+        "risk": 3
+      },
+      "investment_decision": "conditional_invest",
+      "timestamp": "2026-02-28T20:32:31.221Z",
+      "status": "active"
+    },
+    {
+      "id": "INV-1772311504220",
+      "project_name": "NeuroSwap",
+      "category": "DeFi Security",
+      "description": "Autonomous neural network optimizer for DeFi yield strategies. Self-learns market patterns, executes trades without human intervention. Revenue from performance fees. SURGE token staking for priority ",
+      "overall_score": 7.25,
+      "allocation_percentage": 9,
+      "amount": 69.32,
+      "scores": {
+        "autonomy": 9.6,
+        "revenue": 10,
+        "token_utility": 7.7,
+        "moat": 5.5,
+        "ecosystem": 10,
+        "execution": 7.4,
+        "risk": 3.9
+      },
+      "investment_decision": "conditional_invest",
+      "timestamp": "2026-02-28T20:45:04.220Z",
+      "status": "active"
+    }
+  ]
+}

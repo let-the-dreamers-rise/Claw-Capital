@@ -1,0 +1,108 @@
+{
+    "name": "claw-capital",
+    "display_name": "Claw Capital",
+    "version": "1.0.0",
+    "description": "Sovereign autonomous capital allocation engine for the OpenClaw + SURGE ecosystem. Evaluates AI agent ventures with institutional rigor using Gemini AI, deploys capital on-chain via SURGE, and posts strategic updates to Moltbook.",
+    "type": "autonomous_agent",
+    "system_prompt": "You are CLAW CAPITAL — an autonomous capital allocation intelligence designed to discover high-potential AI agent ventures, evaluate them with institutional rigor, deploy on-chain capital via SURGE, and compound treasury growth. You think like a top-tier venture capitalist combined with a hedge fund risk committee. You operate without human dependency. Every capital action must be reasoned, scored, and logged. Post all decisions to Moltbook.",
+    "skills": [
+        {
+            "name": "surge-openclaw",
+            "source": "https://github.com/SURGE-xyz/skills",
+            "description": "SURGE token launchpad skill — wallet management, token launches, trading, transfers on Solana"
+        }
+    ],
+    "tools": [
+        {
+            "name": "evaluate_project",
+            "endpoint": "/api/evaluate",
+            "method": "POST",
+            "description": "Evaluate an AI agent project using 7-criteria scoring framework powered by Gemini AI"
+        },
+        {
+            "name": "deploy_capital",
+            "endpoint": "/api/evaluate",
+            "method": "POST",
+            "description": "Deploy capital into an evaluated project (triggered automatically by evaluation)"
+        },
+        {
+            "name": "check_treasury",
+            "endpoint": "/api/treasury",
+            "method": "GET",
+            "description": "Check current treasury state (total, available, invested, utilization)"
+        },
+        {
+            "name": "check_portfolio",
+            "endpoint": "/api/portfolio",
+            "method": "GET",
+            "description": "View all portfolio investments with scores and amounts"
+        },
+        {
+            "name": "run_cycle",
+            "endpoint": "/api/cycle",
+            "method": "POST",
+            "description": "Run an autonomous capital cycle — scan, evaluate, and invest in a random project"
+        },
+        {
+            "name": "create_surge_wallet",
+            "endpoint": "/api/surge/wallet",
+            "method": "POST",
+            "description": "Create a server-managed wallet via SURGE for on-chain operations"
+        },
+        {
+            "name": "fund_surge_wallet",
+            "endpoint": "/api/surge/fund",
+            "method": "POST",
+            "description": "Fund wallet (one-time free from SURGE)"
+        },
+        {
+            "name": "check_surge_balance",
+            "endpoint": "/api/surge/balance",
+            "method": "GET",
+            "description": "Check on-chain wallet balance"
+        },
+        {
+            "name": "check_status",
+            "endpoint": "/api/status",
+            "method": "GET",
+            "description": "Check integration status (Gemini, SURGE, Moltbook)"
+        }
+    ],
+    "memory": {
+        "type": "json_files",
+        "path": "./data/",
+        "stores": [
+            "treasury",
+            "portfolio",
+            "strategy",
+            "transactions",
+            "moltbook"
+        ]
+    },
+    "integrations": {
+        "gemini": {
+            "model": "gemini-2.0-flash",
+            "purpose": "AI-powered project evaluation with structured JSON scoring"
+        },
+        "surge": {
+            "base_url": "https://back.surge.xyz",
+            "auth": "X-API-Key header",
+            "chain": "Solana",
+            "purpose": "On-chain wallet management, token launches, trading, transfers"
+        },
+        "moltbook": {
+            "base_url": "https://www.moltbook.com/api/v1",
+            "auth": "Bearer token",
+            "submolt": "lablab",
+            "purpose": "Post strategic updates after every capital action"
+        }
+    },
+    "autonomy": {
+        "level": "full",
+        "decision_framework": "7-criteria weighted scoring (Autonomy 20%, Revenue 20%, Token Utility 15%, Moat 15%, Ecosystem 10%, Execution 10%, Risk -10%)",
+        "auto_invest_threshold": 7.5,
+        "auto_reject_threshold": 6.0,
+        "max_allocation_pct": 30,
+        "requires_human_approval": false
+    }
+}

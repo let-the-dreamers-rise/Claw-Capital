@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claw Capital — Autonomous Capital Engine</title>
+  <meta name="description"
+    content="Claw Capital: Sovereign AI Capital Allocation Engine powered by Gemini AI. Autonomous investment decisions, real-time treasury management, and on-chain capital deployment via SURGE.">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👑</text></svg>">
+</head>
+
+<body>
+
+  <!-- ═══ GLOBAL METRICS BAR — CoinMarketCap inspired ═══ -->
+  <div class="global-bar" id="globalBar">
+    <div class="metric">
+      <span class="metric-label">Engine</span>
+      <span class="metric-value green">CLAW v1.0</span>
+    </div>
+    <div class="metric">
+      <span class="metric-label">Treasury</span>
+      <span class="metric-value" id="globalTreasury">1,000 $SURGE</span>
+    </div>
+    <div class="metric">
+      <span class="metric-label">Deployed</span>
+      <span class="metric-value amber" id="globalDeployed">0 $SURGE</span>
+    </div>
+    <div class="metric">
+      <span class="metric-label">Utilization</span>
+      <span class="metric-value" id="globalUtil">0%</span>
+    </div>
+    <div class="metric">
+      <span class="metric-label">Investments</span>
+      <span class="metric-value" id="globalInvestments">0</span>
+    </div>
+    <div class="metric">
+      <span class="metric-label">Cycles</span>
+      <span class="metric-value" id="globalCycles">0</span>
+    </div>
+    <div class="metric">
+      <span class="metric-label">Risk Mode</span>
+      <span class="metric-value">MODERATE</span>
+    </div>
+    <div class="metric">
+      <span class="metric-label">Network</span>
+      <span class="metric-value green">SOLANA</span>
+    </div>
+  </div>
+
+  <!-- ═══ HEADER ═══ -->
+  <header class="header">
+    <div class="header-brand">
+      <div class="header-logo">👑</div>
+      <div>
+        <div class="header-title">CLAW CAPITAL</div>
+        <div class="header-subtitle">Autonomous Capital Engine</div>
+      </div>
+    </div>
+    <div class="header-status">
+      <span class="cycle-count" id="cycleCount">CYCLES: 0</span>
+      <div class="status-indicator">
+        <div class="status-dot"></div>
+        OPERATIONAL
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══ MAIN ═══ -->
+  <main class="main">
+
+    <!-- ─── Treasury Hero Stats ─── -->
+    <section class="treasury-hero">
+      <div class="stat-card">
+        <div class="stat-label">Total Treasury</div>
+        <div class="stat-value green" id="treasuryTotal">1,000<span class="stat-suffix">$SURGE</span></div>
+        <div class="stat-micro-bar">
+          <div class="stat-micro-bar-fill" id="treasuryBar" style="width: 100%; background: var(--gradient-primary);">
+          </div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Available Capital</div>
+        <div class="stat-value" id="treasuryAvailable">1,000<span class="stat-suffix">$SURGE</span></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Deployed Capital</div>
+        <div class="stat-value amber" id="treasuryInvested">0<span class="stat-suffix">$SURGE</span></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Utilization Rate</div>
+        <div class="stat-value blue" id="treasuryUtil">0<span class="stat-suffix">%</span></div>
+        <div class="stat-micro-bar">
+          <div class="stat-micro-bar-fill" id="utilBar" style="width: 0%;"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Evaluate + Portfolio ─── -->
+    <section class="panel-grid">
+
+      <!-- Evaluate Panel -->
+      <div class="panel">
+        <div class="panel-header">
+          <div class="panel-title"><span class="icon">🧠</span> Evaluate Project</div>
+          <span class="panel-badge badge-green">GEMINI AI</span>
+        </div>
+        <div class="panel-body">
+          <form class="eval-form" id="evalForm">
+            <div class="form-group">
+              <label class="form-label" for="projectName">Project Name</label>
+              <input class="form-input" type="text" id="projectName" placeholder="e.g. AgentSwarm" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="projectCategory">Category</label>
+              <select class="form-select" id="projectCategory">
+                <option value="Infrastructure">Infrastructure</option>
+                <option value="DeFi">DeFi</option>
+                <option value="DeFi Security">DeFi Security</option>
+                <option value="Data Infrastructure">Data Infrastructure</option>
+                <option value="Content Generation">Content Generation</option>
+                <option value="Oracle Infrastructure">Oracle Infrastructure</option>
+                <option value="Security">Security</option>
+                <option value="Trading">Trading</option>
+                <option value="Social">Social</option>
+                <option value="Gaming">Gaming</option>
+                <option value="General AI Agent">General AI Agent</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="projectDescription">Project Description</label>
+              <textarea class="form-textarea" id="projectDescription"
+                placeholder="Describe autonomy level, revenue model, token utility, competitive advantages, ecosystem integration..."
+                required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" id="evalBtn">
+              ⚡ Evaluate & Deploy Capital
+            </button>
+          </form>
+
+          <!-- Evaluation Result -->
+          <div id="evalResult" style="display:none;"></div>
+        </div>
+      </div>
+
+      <!-- Portfolio Panel -->
+      <div class="panel">
+        <div class="panel-header">
+          <div class="panel-title"><span class="icon">📊</span> Portfolio</div>
+          <span class="panel-badge badge-purple" id="portfolioCount">0 INVESTMENTS</span>
+        </div>
+        <div class="panel-body no-pad">
+          <div id="portfolioTable">
+            <div class="empty-state">
+              <div class="icon">📭</div>
+              <div>No investments yet.<br>Evaluate a project to begin capital deployment.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ─── Autonomous Cycle ─── -->
+    <section>
+      <button class="btn btn-cycle" id="cycleBtn">
+        🔄 Run Autonomous Capital Cycle
+      </button>
+    </section>
+
+    <!-- ─── Moltbook + Transactions ─── -->
+    <section class="panel-grid">
+
+      <!-- Moltbook Feed -->
+      <div class="panel">
+        <div class="panel-header">
+          <div class="panel-title"><span class="icon">📣</span> Moltbook Feed</div>
+          <span class="panel-badge badge-amber" id="moltbookCount">0 POSTS</span>
+        </div>
+        <div class="panel-body no-pad">
+          <div class="feed" id="moltbookFeed">
+            <div class="empty-state">
+              <div class="icon">📝</div>
+              <div>Moltbook posts will appear here<br>after capital actions.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Transaction Log -->
+      <div class="panel">
+        <div class="panel-header">
+          <div class="panel-title"><span class="icon">⛓️</span> Transaction Log</div>
+          <span class="panel-badge badge-green" id="txCount">0 TXS</span>
+        </div>
+        <div class="panel-body no-pad">
+          <div class="feed" id="txFeed">
+            <div class="empty-state">
+              <div class="icon">🔗</div>
+              <div>On-chain transactions will appear here.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ═══ Toast Container ═══ -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="/app.js"></script>
+</body>
+
+</html>

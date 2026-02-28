@@ -1,0 +1,78 @@
+{
+  "transactions": [
+    {
+      "id": "TX-1772139805744",
+      "type": "transfer",
+      "amount": 80,
+      "currency": "SURGE",
+      "recipient": "SolanaGuard AI",
+      "reason": "Investment: conditional_invest",
+      "status": "executed",
+      "tx_hash": "0xefa2b2a1c912f6d4da3afa17e2ba371444e4b55c342b34aa3f4fb8658ccf4f08",
+      "block": 8421979,
+      "timestamp": "2026-02-26T21:03:25.744Z"
+    },
+    {
+      "id": "TX-1772139843104",
+      "type": "transfer",
+      "amount": 73.6,
+      "currency": "SURGE",
+      "recipient": "NarrativeEngine",
+      "reason": "Autonomous cycle investment",
+      "status": "executed",
+      "tx_hash": "0x9a5382753e1637952fe0761ea81ea22ed83dc7c37d98bfaf135f2703c3244a7c",
+      "block": 2407102,
+      "timestamp": "2026-02-26T21:04:03.104Z"
+    },
+    {
+      "id": "TX-1772310751223",
+      "type": "transfer",
+      "amount": 76.18,
+      "currency": "SURGE",
+      "recipient": "NeuroSwap",
+      "reason": "Investment: conditional_invest",
+      "status": "executed",
+      "tx_hash": "0x2f39aadd22e9c63224b449c56544cb18d55ae6c845332999c1bff8a7215a8200",
+      "block": 9627708,
+      "timestamp": "2026-02-28T20:32:31.224Z"
+    },
+    {
+      "id": "TX-1772311504223",
+      "type": "transfer",
+      "amount": 69.32,
+      "currency": "SURGE",
+      "recipient": "NeuroSwap",
+      "reason": "Investment: conditional_invest",
+      "status": "executed",
+      "tx_hash": "0x59d6bc65826b3ee79de9214244ba8ee05211eedec854a2033694f8f9b3a31c08",
+      "block": 6949671,
+      "timestamp": "2026-02-28T20:45:04.224Z"
+    },
+    {
+      "id": "TX-1772311758674",
+      "type": "investment",
+      "project": "NeuroSwap",
+      "decision": "reject",
+      "score": 6.06,
+      "amount": 0,
+      "currency": "SURGE",
+      "status": "rejected",
+      "tx_hash": null,
+      "block": null,
+      "timestamp": "2026-02-28T20:49:18.675Z"
+    },
+    {
+      "id": "TX-1772311811916",
+      "type": "investment",
+      "project": "SolanaGuardAI",
+      "decision": "reject",
+      "score": 6.03,
+      "amount": 0,
+      "currency": "SURGE",
+      "status": "rejected",
+      "tx_hash": null,
+      "block": null,
+      "timestamp": "2026-02-28T20:50:11.916Z"
+    }
+  ]
+}
